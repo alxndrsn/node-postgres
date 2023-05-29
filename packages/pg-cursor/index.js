@@ -152,7 +152,7 @@ class Cursor extends EventEmitter {
 
   handleError(msg) {
     // If this cursor has already closed, don't try to handle the error.
-    //if(this.state === 'done') return;
+    if(this.state === 'done') return;
 
     // If we're in an initialized state we've never been submitted
     // and don't have a connection instance reference yet.
