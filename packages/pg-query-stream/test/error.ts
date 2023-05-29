@@ -168,7 +168,7 @@ describe('error recovery', () => {
 		// Subsequent query on same connection should succeed
 		const res = await conn.query('SELECT 1 AS a;');
 		assert.deepStrictEqual(res.rows, [ { a:1 } ]);
-		
+
 		conn.release()
 		await pool.end()
 	})
