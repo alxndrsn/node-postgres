@@ -37,11 +37,11 @@ test-missing-native:
 	@echo "***Testing optional native install***"
 	@node test/native/missing-native.js
 
-test-native: test-connection
+test-native:
 	@echo "***Testing native bindings***"
-	ifdef TEST_SKIP_NATIVE
+ifdef TEST_SKIP_NATIVE
 	@echo "***Skipping tests***"
-	endif
+else
 	pwd
 	npm --version
 	echo pre-install start
@@ -58,6 +58,7 @@ test-native: test-connection
 	find test/native -name "*-tests.js" | $(node-command)
 	find test/integration -name "*-tests.js" | $(node-command) native
 	npm uninstall pg-native
+endif
 
 test-integration: test-connection
 	@echo "***Testing Pure Javascript***"
