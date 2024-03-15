@@ -45,7 +45,7 @@ test-native: test-connection
 	ls ../../node_modules || true
 	echo pre-install end
 	#cd ../..
-	npm i --no-save pg-native
+	npm i --no-save --install-strategy=nested pg-native
 	#cd -
 	find / -type d -name pg-native 2>/dev/null || echo not found
 	ls node_modules
