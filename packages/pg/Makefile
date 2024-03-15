@@ -42,6 +42,8 @@ test-native: test-connection
 	pwd
 	npm i --no-save pg-native
 	ls node_modules
+	ls ../node_modules || true
+	ls ../../node_modules || true
 	find test/native -name "*-tests.js" | $(node-command)
 	find test/integration -name "*-tests.js" | $(node-command) native
 	npm uninstall pg-native
