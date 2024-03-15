@@ -41,9 +41,14 @@ test-native: test-connection
 	echo "***Testing native bindings***"
 	pwd
 	npm --version
+	echo pre-install start
+	ls ../../node_modules || true
+	echo pre-install end
 	npm i --no-save pg-native
+	echo post-install start
 	ls node_modules
-	ls ../node_modules || true
+	echo post-install end
+	#ls ../node_modules || true
 	ls ../../node_modules || true
 	find test/native -name "*-tests.js" | $(node-command)
 	find test/integration -name "*-tests.js" | $(node-command) native
