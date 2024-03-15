@@ -37,13 +37,13 @@ jobs:
       fail-fast: false
       matrix:
         node:
-          - '12'
-          - '14'
-          - '16'
           - '18'
           - '20'
         os:
           - ubuntu-latest
+        debug:
+          - ''
+          - module
     name: Node.js ${{ matrix.node }} (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     env:
@@ -54,7 +54,7 @@ jobs:
         PGTESTNOSSL: 'true'
         SCRAM_TEST_PGUSER: scram_test
         SCRAM_TEST_PGPASSWORD: test4scram
-        #NODE_DEBUG: module
+        NODE_DEBUG: ${{ matrix.debug }}
     steps:
       - name: Show OS
         run: |
