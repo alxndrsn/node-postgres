@@ -54,7 +54,7 @@ jobs:
         PGTESTNOSSL: 'true'
         SCRAM_TEST_PGUSER: scram_test
         SCRAM_TEST_PGPASSWORD: test4scram
-        NODE_DEBUG: module
+        #NODE_DEBUG: module
     steps:
       - name: Show OS
         run: |
