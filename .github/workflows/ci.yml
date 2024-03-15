@@ -56,6 +56,7 @@ jobs:
         SCRAM_TEST_PGPASSWORD: test4scram
         NODE_DEBUG: ${{ matrix.debug }}
     steps:
+      - run: sudo apt-get install -y libpq
       - name: Show OS
         run: |
           uname -a
