@@ -44,7 +44,9 @@ test-native: test-connection
 	echo pre-install start
 	ls ../../node_modules || true
 	echo pre-install end
+	cd ../..
 	npm i --no-save pg-native
+	cd -
 	find / -type d -name pg-native 2>/dev/null
 	ls node_modules
 	echo post-install start
