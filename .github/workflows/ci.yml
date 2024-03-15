@@ -41,10 +41,7 @@ jobs:
           - '20'
         os:
           - ubuntu-latest
-        debug:
-          - ''
-          - module
-    name: "Node.js ${{ matrix.node }} (${{ matrix.os }}) (debug: ${{ matrix.debug }})"
+    name: Node.js ${{ matrix.node }} (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     env:
         PGUSER: postgres
@@ -54,7 +51,6 @@ jobs:
         PGTESTNOSSL: 'true'
         SCRAM_TEST_PGUSER: scram_test
         SCRAM_TEST_PGPASSWORD: test4scram
-        NODE_DEBUG: ${{ matrix.debug }}
     steps:
       - if: ${{ matrix.node == 20 }}
         run: export TEST_SKIP_NATIVE=true
