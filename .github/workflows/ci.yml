@@ -44,7 +44,7 @@ jobs:
         debug:
           - ''
           - module
-    name: Node.js ${{ matrix.node }} (${{ matrix.os }})
+    name: Node.js ${{ matrix.node }} (${{ matrix.os }}) (debug: ${{ matrix.debug }})
     runs-on: ${{ matrix.os }}
     env:
         PGUSER: postgres
