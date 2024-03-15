@@ -47,7 +47,7 @@ test-native: test-connection
 	cd ../..
 	npm i --no-save pg-native
 	cd -
-	find / -type d -name pg-native 2>/dev/null
+	find / -type d -name pg-native 2>/dev/null || echo not found
 	ls node_modules
 	echo post-install start
 	ls ../../node_modules || true
