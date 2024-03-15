@@ -39,7 +39,7 @@ test-missing-native:
 
 test-native: test-connection
 	@echo "***Testing native bindings***"
-ifdef TEST_SKIP_NATIVE
+ifeq ($(TEST_SKIP_NATIVE), true)
 	@echo "***Skipping tests***"
 else
 	@npm i --no-save pg-native
