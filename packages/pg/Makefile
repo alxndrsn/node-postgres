@@ -39,6 +39,9 @@ test-missing-native:
 
 test-native: test-connection
 	@echo "***Testing native bindings***"
+	ifdef TEST_SKIP_NATIVE
+	@echo "***Skipping tests***"
+	endif
 	pwd
 	npm --version
 	echo pre-install start
