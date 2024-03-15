@@ -40,7 +40,7 @@ test-missing-native:
 test-native: test-connection
 	echo "***Testing native bindings***"
 	pwd
-	npm i --no-save pg-native
+	npm i pg-native
 	ls node_modules
 	find test/native -name "*-tests.js" | $(node-command)
 	find test/integration -name "*-tests.js" | $(node-command) native
