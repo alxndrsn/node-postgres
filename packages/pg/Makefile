@@ -40,6 +40,7 @@ test-missing-native:
 test-native: test-connection
 	echo "***Testing native bindings***"
 	pwd
+	npm --version
 	npm i --no-save pg-native
 	ls node_modules
 	ls ../node_modules || true
