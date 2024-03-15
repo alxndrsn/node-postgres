@@ -29,7 +29,7 @@ bench:
 test-unit:
 	@find test/unit -name "*-tests.js" | $(node-command)
 
-test-connection:
+test-connection: update-npm
 	@echo "***Testing connection***"
 	@node script/create-test-tables.js $(params)
 
