@@ -38,15 +38,15 @@ test-missing-native:
 	@node test/native/missing-native.js
 
 test-native: test-connection
-	echo "***Testing native bindings***"
+	@echo "***Testing native bindings***"
 	pwd
 	npm --version
 	echo pre-install start
 	ls ../../node_modules || true
 	echo pre-install end
-	cd ../..
+	#cd ../..
 	npm i --no-save pg-native
-	cd -
+	#cd -
 	find / -type d -name pg-native 2>/dev/null || echo not found
 	ls node_modules
 	echo post-install start
