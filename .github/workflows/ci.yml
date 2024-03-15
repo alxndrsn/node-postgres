@@ -57,7 +57,7 @@ jobs:
         SCRAM_TEST_PGPASSWORD: test4scram
     steps:
       - if: ${{ matrix.node == 20 }}
-        run: export TEST_SKIP_NATIVE=true
+        run: echo "TEST_SKIP_NATIVE=true" >> "$GITHUB_ENV"
       - name: Show OS
         run: |
           uname -a
