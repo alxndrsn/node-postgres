@@ -29,7 +29,7 @@ bench:
 test-unit:
 	@find test/unit -name "*-tests.js" | $(node-command)
 
-test-connection: update-npm
+test-connection:
 	@echo "***Testing connection***"
 	@node script/create-test-tables.js $(params)
 
@@ -37,7 +37,7 @@ test-missing-native:
 	@echo "***Testing optional native install***"
 	@node test/native/missing-native.js
 
-test-native:
+test-native: test-connection
 	@echo "***Testing native bindings***"
 ifdef TEST_SKIP_NATIVE
 	@echo "***Skipping tests***"
