@@ -45,11 +45,10 @@ test-native: test-connection
 	ls ../../node_modules || true
 	echo pre-install end
 	npm i --no-save pg-native
-	echo post-install start
 	ls node_modules
-	echo post-install end
-	#ls ../node_modules || true
+	echo post-install start
 	ls ../../node_modules || true
+	echo post-install end
 	find test/native -name "*-tests.js" | $(node-command)
 	find test/integration -name "*-tests.js" | $(node-command) native
 	npm uninstall pg-native
