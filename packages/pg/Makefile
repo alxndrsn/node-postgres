@@ -38,11 +38,12 @@ test-missing-native:
 	@node test/native/missing-native.js
 
 test-native: test-connection
-	@echo "***Testing native bindings***"
-	@npm i --no-save pg-native
-	@find test/native -name "*-tests.js" | $(node-command)
-	@find test/integration -name "*-tests.js" | $(node-command) native
-	@npm uninstall pg-native
+	echo "***Testing native bindings***"
+	pwd
+	npm i --no-save pg-native
+	find test/native -name "*-tests.js" | $(node-command)
+	find test/integration -name "*-tests.js" | $(node-command) native
+	npm uninstall pg-native
 
 test-integration: test-connection
 	@echo "***Testing Pure Javascript***"
