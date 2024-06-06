@@ -1,7 +1,7 @@
 {
-  "plugins": ["prettier"],
+  "plugins": ["@typescript-eslint", "prettier"],
   "parser": "@typescript-eslint/parser",
-  "extends": ["plugin:prettier/recommended", "prettier"],
+  "extends": ["eslint:recommended", "plugin:prettier/recommended", "prettier"],
   "ignorePatterns": ["node_modules", "coverage", "packages/pg-protocol/dist/**/*", "packages/pg-query-stream/dist/**/*"],
   "parserOptions": {
     "ecmaVersion": 2017,
@@ -11,5 +11,13 @@
     "node": true,
     "es6": true,
     "mocha": true
+  },
+  "rules": {
+    "eol-last": "error",
+    "no-tabs": "error",
+    "no-trailing-spaces": "error",
+    "no-unused-expressions": "error",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error"
   }
 }

@@ -1,0 +1,8 @@
+{
+  "plugins": ["prettier"],
+  "parser": "@typescript-eslint/parser",
+  "extends": ["../.eslintrc"],
+  "globals": {
+    "MemoryStream": "readonly"
+  }
+}
